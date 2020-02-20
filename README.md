@@ -1,3 +1,8 @@
+# What's the difference from the original?
+
+The only difference between this fork and the original for the moment is that for this version there is no possibility for user to **download the viewed file**.
+This may be useful if you only want to show some e.g. drafts without them being copied.
+
 # DjVu.js
 
 ## About / О проекте
