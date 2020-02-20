@@ -37,7 +37,6 @@ class HelpWindow extends React.Component {
                     </div>
 
                     <div className="header">Hotkeys</div>
-                    <div className="para"><em>Ctrl+S</em> - save document</div>
                     <div className="para"><em>Left Arrow</em> - go to the previous page</div>
                     <div className="para"><em>Right Arrow</em> - go to the next page</div>
 

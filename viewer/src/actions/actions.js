@@ -48,8 +48,6 @@ const Actions = {
 
     showHelpWindowAction: () => ({ type: Consts.SHOW_HELP_WINDOW_ACTION }),
 
-    saveDocumentAction: () => ({ type: Consts.SAVE_DOCUMENT_ACTION }),
-
     startFileLoadingAction: () => ({ type: Consts.START_FILE_LOADING_ACTION }),
 
     endFileLoadingAction: () => ({ type: Consts.END_FILE_LOADING_ACTION }),

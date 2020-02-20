@@ -12,7 +12,6 @@ class FilePanel extends React.Component {
 
     static propTypes = {
         fileName: PropTypes.string,
-        saveDocument: PropTypes.func.isRequired
     };
 
     render() {
@@ -28,15 +27,6 @@ class FilePanel extends React.Component {
                     </span>
                 ) : null}
                 <FileBlock fileName={this.props.fileName} />
-                {this.props.fileName ? (
-                    <button
-                        className="text_button"
-                        onClick={this.props.saveDocument}
-                        title="Save document"
-                    >
-                        Save
-                    </button>
-                ) : null}
             </div>
         );
     }
@@ -45,6 +35,5 @@ class FilePanel extends React.Component {
 export default connect(state => ({
     fileName: get.fileName(state),
 }), {
-        saveDocument: Actions.saveDocumentAction,
         closeDocument: Actions.closeDocumentAction
     })(FilePanel);

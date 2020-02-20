@@ -156,19 +156,6 @@ class RootSaga {
         }
     }
 
-    * saveDocument() {
-        const state = yield select();
-        const fileName = get.fileName(state);
-
-        if (fileName) {
-            const url = yield this.djvuWorker.createDocumentUrl();
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = /\.(djv|djvu)$/.test(fileName) ? fileName : (fileName + '.djvu');
-            a.dispatchEvent(new MouseEvent("click"));
-        }
-    }
-
     resetWorker() {
         this.pagesCache.resetPagesCache();
         this.djvuWorker.reset();
@@ -238,7 +225,6 @@ class RootSaga {
         yield takeLatest(Consts.CREATE_DOCUMENT_FROM_ARRAY_BUFFER_ACTION, this.withErrorHandler(this.createDocumentFromArrayBufferAction));
         yield takeLatest(Consts.SET_NEW_PAGE_NUMBER_ACTION, this.withErrorHandler(this.fetchPageData));
         yield takeLatest(Consts.SET_PAGE_BY_URL_ACTION, this.withErrorHandler(this.setPageByUrl));
-        yield takeLatest(Consts.SAVE_DOCUMENT_ACTION, this.withErrorHandler(this.saveDocument));
         yield takeLatest(Consts.CLOSE_DOCUMENT_ACTION, this.withErrorHandler(this.resetWorker));
         yield takeLatest(Consts.SET_API_CALLBACK_ACTION, this.withErrorHandler(this.setCallback));
         yield takeLatest(Consts.ENABLE_CONTINUOUS_SCROLL_MODE_ACTION, this.withErrorHandler(this.switchToContinuosScrollMode));

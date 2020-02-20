@@ -4,7 +4,6 @@ export default function initHotkeys(store) {
     document.addEventListener('keydown', (e) => {
         if ((e.key === 's' || e.code === 'KeyS') && e.ctrlKey) { // code property isn't supported in Edge yet 
             e.preventDefault();
-            store.dispatch(Actions.saveDocumentAction());
             return;
         }
 
