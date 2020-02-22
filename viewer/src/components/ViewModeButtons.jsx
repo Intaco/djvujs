@@ -48,13 +48,6 @@ class ViewModeButtons extends React.Component {
                         onClick={this.enableSinglePageMode}
                     />
                 </span>
-                <span title="Text view mode" className={isTextMode ? 'active' : ''}>
-                    <FontAwesomeIcon
-                        className="control_button"
-                        icon={faFileAlt}
-                        onClick={this.enableTextMode}
-                    />
-                </span>
             </div>
         );
     }

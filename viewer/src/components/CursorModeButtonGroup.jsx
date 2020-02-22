@@ -19,13 +19,6 @@ class CursorModeButtonGroup extends React.Component {
         const cursorMode = this.props.cursorMode;
         return (
             <div className="button_group">
-                <span title="Text cursor mode" className={cursorMode === Consts.TEXT_CURSOR_MODE ? "active" : null}>
-                    <FontAwesomeIcon
-                        className="control_button"
-                        icon={faICursor}
-                        onClick={this.props.setTextCursorMode}
-                    />
-                </span>
                 <span title="Grab cursor mode" className={cursorMode === Consts.GRAB_CURSOR_MODE ? "active" : null}>
                     <FontAwesomeIcon
                         className="control_button"
